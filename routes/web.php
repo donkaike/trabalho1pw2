@@ -14,4 +14,7 @@ use App\Http\Controllers\ServicosController;
 |
 */
 
-Route::get('/', [ServicosController::class, 'getServices']);
+Route::get('/', [ServicosController::class, 'getServices'])->name('servicos.listar');
+
+Route::get('/add', [ServicosController::class, 'addForm'])->name('servicos.form');
+Route::post('/add', [ServicosController::class, 'adicionar'])->name('servicos.add');
